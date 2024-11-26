@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KantinKu - Daftar Menu Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Daftar Menu KantinKu</h1>
+        <select id="filter" onchange="filterMenu()">
+            <option value="all">Semua</option>
+            <option value="nasi">Nasi</option>
+            <option value="camilan">Camilan</option>
+            <option value="minuman">Minuman</option>
+        </select>
+    </header>
+    
+    <div class="menu-container" id="menu-container">
+        <div class="menu-item nasi">
+            <img src="/images/nasi-goreng.png" alt="Nasi Goreng">
+            <h2>Nasi Goreng</h2>
+            <p>Hidangan nasi goreng spesial dengan ayam dan sayuran.</p>
+            <p>Harga: Rp 20.000</p>
+        </div>
+        
+        <div class="menu-item nasi">
+            <img src="/images/mie-bagladesh.png" alt="Mie Makassar">
+            <h2>Mie Bangladesh</h2>
+            <p>Mie dengan kuah kaldu yang gurih, disajikan dengan daging ayam.</p>
+            <p>Harga: Rp 15.000</p>
+        </div>
+
+        <div class="menu-item camilan">
+            <img src="/images/gorengan.png" alt="Sate Ayam">
+            <h2>Gorengan</h2>
+            <p>Gorengan gurih dengan rasa yang lezat.</p>
+            <p>Harga: Rp 25.000</p>
+        </div>
+
+        <div class="menu-item minuman">
+            <img src="/images/teh.png" alt="Teh Manis">
+            <h2>Teh Manis</h2>
+            <p>Teh tawar manis yang menyegarkan.</p>
+            <p>Harga: Rp 5.000</p>
+        </div>
+
+        <div class="menu-item minuman">
+            <img src="/images/jus.png" alt="Jus Alpukat">
+            <h2>Jus Alpukat</h2>
+            <p>Jus alpukat segar yang kaya rasa dan bergizi.</p>
+            <p>Harga: Rp 10.000</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Terima kasih telah menggunakan KantinKu!</p>
+    </footer>
+
+    <script>
+        function filterMenu() {
+            const filter = document.getElementById("filter").value;
+            const menuItems = document.querySelectorAll(".menu-item");
+            
+            menuItems.forEach(item => {
+                if (filter === "all" || item.classList.contains(filter)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
